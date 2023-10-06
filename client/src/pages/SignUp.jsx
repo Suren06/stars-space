@@ -16,7 +16,7 @@ const SignUp = () => {
     e.preventDefault();
     try {
       setLoading(true);
-      const res = await fetch("api/auth/signup", {
+      const res = await fetch("/api/auth/signup", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -73,7 +73,9 @@ const SignUp = () => {
       </form>
       <div className="flex gap-2 mt-4">
         <p>Have an account?</p>
-        <Link to={"/sign-in"}></Link>
+        <Link to={"/sign-in"}>
+          <span className="text-blue-700"> Sign In</span>
+        </Link>
       </div>
       {error && <p className="mt-5 text-red-500">{error}</p>}
     </div>

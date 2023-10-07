@@ -38,7 +38,7 @@ const Header = () => {
             <li
               className={`flex items-center gap-[3px] px-2 hover:bg-gray-300 rounded-lg  cursor-pointer py-2 font-semibold text-slate-600 border-b-[3px] 
               border-b-transparent hover:text-blue-700 ${
-                pathMatchRoute("/") && "text-blue-800 border-b-blue-800"
+                pathMatchRoute("/") && "text-blue-900 border-b-blue-900"
               }`}
             >
               <BiHome size="16px" />
@@ -50,7 +50,7 @@ const Header = () => {
             <li
               className={`flex items-center gap-[3px] px-2 hover:bg-gray-300 rounded-lg cursor-pointer py-2 font-semibold text-slate-600 border-b-[3px]
                border-b-transparent hover:text-blue-700 ${
-                 pathMatchRoute("/about") && "text-blue-800 border-b-blue-800"
+                 pathMatchRoute("/about") && "text-blue-900 border-b-blue-900"
                }`}
             >
               <TbArrowRoundaboutRight size="16px" />
@@ -61,7 +61,7 @@ const Header = () => {
             <li
               className={`flex items-center gap-[3px] px-2 hover:bg-gray-300 rounded-lg cursor-pointer py-2 font-semibold text-slate-600 border-b-[3px]
                border-b-transparent hover:text-blue-700 ${
-                 pathMatchRoute("/sign-in") && "text-blue-800 border-b-blue-800"
+                 pathMatchRoute("/sign-in") && "text-blue-900 border-b-blue-900"
                }`}
             >
               <PiSignInBold size="16px" />

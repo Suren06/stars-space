@@ -1,13 +1,12 @@
 import { FaSearch } from "react-icons/fa";
 import { BiHome } from "react-icons/bi";
 import { TbArrowRoundaboutRight } from "react-icons/tb";
-import { PiSignInBold } from "react-icons/pi";
-
+import { useSelector } from "react-redux";
 import { Link, useLocation } from "react-router-dom";
 
 const Header = () => {
+  const { currentUser } = useSelector((state) => state.user);
   const location = useLocation();
-  console.log(location);
 
   function pathMatchRoute(route) {
     if (route === location.pathname) {
@@ -38,7 +37,7 @@ const Header = () => {
             <li
               className={`flex items-center gap-[3px] px-2 hover:bg-gray-300 rounded-lg  cursor-pointer py-2 font-semibold text-slate-600 border-b-[3px] 
               border-b-transparent hover:text-blue-700 ${
-                pathMatchRoute("/") && "text-blue-900 border-b-blue-900"
+                pathMatchRoute("/") && "text-blue-800 border-b-blue-800"
               }`}
             >
               <BiHome size="16px" />
@@ -50,23 +49,31 @@ const Header = () => {
             <li
               className={`flex items-center gap-[3px] px-2 hover:bg-gray-300 rounded-lg cursor-pointer py-2 font-semibold text-slate-600 border-b-[3px]
                border-b-transparent hover:text-blue-700 ${
-                 pathMatchRoute("/about") && "text-blue-900 border-b-blue-900"
+                 pathMatchRoute("/about") && "text-blue-800 border-b-blue-800"
                }`}
             >
               <TbArrowRoundaboutRight size="16px" />
               About
             </li>
           </Link>
-          <Link to="/sign-in">
-            <li
-              className={`flex items-center gap-[3px] px-2 hover:bg-gray-300 rounded-lg cursor-pointer py-2 font-semibold text-slate-600 border-b-[3px]
+
+          <Link to="/profile">
+            {currentUser ? (
+              <img
+                className="object-cover w-10 h-10 rounded-full"
+                src={currentUser?.avatar}
+                alt="profile"
+              />
+            ) : (
+              <li
+                className={`flex items-center gap-[3px] px-2 hover:bg-gray-300 rounded-lg cursor-pointer py-2 font-semibold text-slate-600 border-b-[3px]
                border-b-transparent hover:text-blue-700 ${
                  pathMatchRoute("/sign-in") && "text-blue-900 border-b-blue-900"
                }`}
-            >
-              <PiSignInBold size="16px" />
-              Sign in
-            </li>
+              >
+                Sign in
+              </li>
+            )}
           </Link>
         </ul>
       </div>

@@ -5,3 +5,12 @@
 body {
     background-color: rgb(241, 245, 241);
 }
+
+.swiper-button-next {
+    color: #1A8DFF;
+    font-weight: bold;
+}
+.swiper-button-prev {
+    color: #1A8DFF;
+    font-weight: bold;
+}
